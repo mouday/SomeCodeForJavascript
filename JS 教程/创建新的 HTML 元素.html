@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div id="div1">
+        <p id=p1>这是第一个段落</p>
+        <p id=p2>这是第二个段落</p>
+    </div>
+    <script>
+        // 创建新的元素p3
+        var para = document.createElement("p");
+        var node = document.createTextNode("这个是新建的文本节点");
+        para.appendChild(node);
+        var x = document.getElementById("div1");
+        x.appendChild(para);
+        // 删除节点p1
+        var div1= document.getElementById("div1");
+        var p1=document.getElementById("p1");
+        div1.removeChild(p1);
+        // 不引用父元素的情况下删除某个元素p2
+        var p2=document.getElementById("p2");
+        p2.parentNode.removeChild(p2);
+    </script>
+</body>
+
+</html>

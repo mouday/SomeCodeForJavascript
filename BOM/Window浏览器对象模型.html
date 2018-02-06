@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 浏览器对象模型（Browser Object Model） -->
+    <p id="demo"></p>
+    <script>
+        // Window 尺寸
+        document.write("<h3>Window</h3>");
+        
+        // 对于Internet Explorer、Chrome、Firefox、Opera 以及 Safari：
+        var h = window.innerHeight
+            || document.documentElement.clientHeight
+            || document.body.clientheight;
+
+        var w = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientwidth;
+        //“||”后面的是Internet Explorer 8、7、6、5
+
+        var x = document.getElementById("demo");
+        x.innerHTML = "<p>浏览器内部窗口 高度：" + h + " 宽度： " + w+"</p>";
+
+        // window.screen 对象包含有关用户屏幕的信息
+        // 以像素计，减去界面特性，比如窗口任务栏
+        document.write("<h3>screen</h3>");
+        
+        document.write("<p>可用高度availHeight： "+screen.availHeight+"</p>");
+        document.write("<p>可用寬度availWidth： "+screen.availWidth+"</p>");
+
+        // window.location 对象用于获得当前页面的地址 (URL)，并把浏览器重定向到新的页面
+        document.write("<h3>location</h3>");
+// location.hostname 返回 web 主机的域名
+// location.pathname 返回当前页面的路径和文件名
+// location.port 返回 web 主机的端口 （80 或 443）
+// location.protocol 返回所使用的 web 协议（http:// 或 https://）
+        document.write("<p>href返回（当前页面的）整个 URL: "+location.href+"</p>");
+        document.write("<p>pathname返回 URL 的路径名: "+location.pathname+"</p>");
+        document.write("<p>hostname返回 web 主机的域名: "+location.hostname+"</p>");
+        document.write("<p>port 返回 web 主机的端口: "+location.port+"</p>");
+        document.write("<p>protocol 返回所使用的 web 协议: "+location.protocol+"</p>");
+        function newDoc(){
+            // 加载一个新的文档
+            location.assign("http://www.baidu.com");
+        }
+
+        
+    </script>
+    <button onclick="newDoc()">assign百度</button>
+
+    <script>
+        document.write("<h3>History</h3>");
+        function goBack(){
+            window.history.back();
+        }
+        function goForward(){
+            window.history.forward();
+        }
+    </script>
+    <input type="button" value="back" onclick="goBack()">
+    <input type="button" value="forward" onclick="goForward()">
+
+    <script>
+        document.write("<h3>Navigator</h3>");
+    </script>
+    <div id="txt"></div>
+    <script>
+    var txt="<p>appCodeName: "+navigator.appCodeName+"</p>";
+    txt+="<p>appName: "+navigator.appName+"</p>";
+    txt+="<p>appVersion: "+navigator.appVersion+"</p>";
+    txt+="<p>cookieEnabled: "+navigator.cookieEnabled+"</p>";
+    txt+="<p>platform: "+navigator.platform+"</p>";
+    txt+="<p>userAgent: "+navigator.userAgent+"</p>";
+    txt+="<p>systemLanguage: "+navigator.systemLanguage +"</p>";
+    document.getElementById("txt").innerHTML=txt;
+    </script>
+
+<!-- JavaScript 中创建三种消息框：警告框、确认框、提示框 -->
+    <script>
+        document.write("<h3>消息框</h3>");
+        function myalert(){
+            alert("这是警告框");
+        }
+
+        function myalertln(){
+            alert("这是警告框第一行"+"\n"+"这是第二行！");
+        }
+        function myconfirm(){
+            var ret=confirm("请点击是或者否");
+            var txt;
+            if(ret==true){
+                txt="确认";
+            }
+            else{
+                txt="否";
+            }
+            document.getElementById("confirmText").innerHTML="您选择了： "+txt;
+        }
+        function myprompt(){
+            var ret=prompt("这是提示文字","小明");
+            if(ret!=null && ret!="")
+            {
+                document.getElementById("promptText").innerHTML="你好： "+ret;
+            }
+        }
+    </script>
+    <button onclick="myalert()">警告框alter</button><br><br>
+    <button onclick="myalertln()">警告框带换行</button><br><br>
+    <button onclick="myconfirm()">确认框confirm</button>
+    <div id="confirmText"></div><br><br>
+    <button onclick="myprompt()">提示框prompt</button>
+    <div id="promptText"></div><br><br>
+</body>
+
+</html>

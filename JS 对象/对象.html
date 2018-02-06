@@ -1,0 +1,46 @@
+<html>
+<script>
+    // 创建对象实例
+    var person = new Object();
+    // 属性
+    person.firstName = "Bill";
+    person.lastName = "Gates";
+    person.id = 3306;
+    document.write(person.firstName + person.lastName + "<br>");
+    // 替代语法
+    person2 = { firstName: "JOBS", lastName: "steve", id:5567 };//此处属性-值之间需要用冒号
+    document.write(person2.firstName +" is " + person2.lastName + person2.id + "<br>");
+
+    // 方法，推荐使用camelCase命名
+    var s = "hello world!";
+    // 访问对象的属性
+    document.write(s.length + "<br>");
+    // 访问对象的方法
+    document.write(s.toUpperCase() + "<br>");
+
+    // 使用对象构造器
+    function student(firstName,lastName,age){
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.age=age;
+        this.changeName=changeName;//把方法添加到 JavaScript 对象
+    }
+    function changeName(name){
+        this.firstName=name;
+    }
+    var s1=new student("tom","farthe",25);
+    document.write(s1.firstName+" "+s1.lastName+" "+s1.age+"<br>");
+    s1.changeName("jack");
+    document.write(s1.firstName+" "+s1.lastName+" "+s1.age+"<br>");
+    // 循环遍历对象的属性
+    for(x in s1)
+    {
+        document.write(s1[x]+"<br>");
+    }
+</script>
+
+<body>
+    <!-- 对象 -->
+</body>
+
+</html>

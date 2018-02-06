@@ -1,0 +1,46 @@
+<div id="test"></div>
+<script>
+    //变量 
+    var x = 2;
+    var y = 3;
+    var z = 2 + 3;
+    var a = 3.14;
+    var name = "Bill Gates";
+    var answer = 'Yes I am!';
+    var val = "he is call 'bill'";
+
+    document.write(x + "<br>")
+    document.write(y + "<br>")
+    document.write(z + "<br>")
+    document.write(a + "<br>")
+    document.write(name + "<br>")
+    document.write(answer + "<br>")
+    document.write(val + "<br>")
+    document.getElementById("test").innerHTML = "text";
+
+    // 数组
+    var cars = ["宝马", "大众", "吉普"];
+    //输出数组
+    var i;//类似c++风格
+    for (i = 0; i < cars.length; i++) {
+        document.write(cars[i] + "<br>");
+    }
+    // 对象
+    var person = {
+        firstName: "Bill",
+        lastName: "Gates",
+        id: 3366
+    };
+    //输出对象
+    document.write(person["lastName"] + "<br>");
+    document.write(person.id + "<br>");
+    // 用null清空变量
+    var val = null;
+    document.write(val + "<br>")
+    // JavaScript 变量均为对象
+    var val1 = new string;
+    var val2 = new number;
+    var val3 = new Array;
+    var val4 = new boolean;
+    var val5 = new object;
+</script>

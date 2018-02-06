@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $("document").ready(function(){
+            $("#btn-multiple").click(function(){
+                $("div").animate({
+                    left:"200px",
+                    opacity:"0.5",
+                    height:"+=150px",
+                    width:"+=150px"
+                    },"slow")
+                $("div").animate({fontSize:"8em"},"slow")
+                 // Camel 标记法书写所有的属性名，比如，
+                 // 必须使用 paddingLeft 而不是 padding-left
+            });
+            $("#btn-loop").click(function(){
+                var div=$("div");
+                div.animate({height:"300px",opacity:"0.8"},"slow");
+                div.animate({width:"300px",opacity:"0.4"},"slow");
+                div.animate({height:"100px",opacity:"0.8"},"slow");
+                div.animate({width:"100px",opacity:"0.4"},"slow");
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>默认情况下，所有 HTML 元素的位置都是静态的，并且无法移动。如需对位置进行操作，记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute。</p>
+    <button type="button" id="btn-multiple">多个属性</button> 
+    <button type="button" id="btn-loop">连续动画</button><br><br>
+    <div style="width: 100px; height: 100px; background-color: #98bf21; position:absolute;">TEST</div>
+</body>
+</html>

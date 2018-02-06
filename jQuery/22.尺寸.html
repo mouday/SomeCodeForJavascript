@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btn-get").click(function(){
+                var div = $("div");
+                var txt= "";
+                txt += "width:" + div.width() + "</br>";  //设置或返回元素的宽度（不包括内边距、边框或外边距）。
+                txt += "height:" + div.height()+"</br>";  //设置或返回元素的高度（不包括内边距、边框或外边距）。
+                txt += "innerWidth:" + div.innerWidth()+"</br>";  //返回元素的宽度（包括内边距）。
+                txt += "innerHeight:" + div.innerHeight()+"</br>";  //返回元素的高度（包括内边距）。
+                txt += "outerWidth:" + div.outerWidth()+"</br>";  //返回元素的宽度（包括内边距和边框）
+                txt += "outerHeight:" + div.outerHeight()+"</br>";  //返回元素的高度（包括内边距和边框）
+                txt += "outerWidth(true):" + div.outerWidth(true)+"</br>";  //返回元素的宽度（包括内边距、边框和外边距）
+                txt += "outerHeight(true):" + div.outerHeight(true)+"</br>";  //返回元素的高度（包括内边距、边框和外边距）
+
+                // 文档（HTML 文档）
+                txt +="document width:" + $(document).width()+"</br>";
+                txt +="document heigth:" + $(document).height()+"</br>";
+               
+                // 窗口（浏览器视口） 
+                txt +="window width:" + $(window).width()+"</br>";
+                txt +="window height:" + $(window).height()+"</br>";
+                div.html(txt);
+            });
+            $("#btn-set").click(function(){
+                $("div").width(100).height(100);
+
+            })
+        });
+    </script>
+</head>
+<body>
+    <div style="width: 500px; height: 300px; padding: 10px; margin: 20px; border: solid 2px red; background-color: green"></div>
+    <button id="btn-get">获取尺寸</button>
+    <button id="btn-set">设置尺寸</button>
+    <pre style="font-size: 18px">
+        width():设置或返回元素的宽度（不包括内边距、边框或外边距）
+        height():设置或返回元素的高度（不包括内边距、边框或外边距）
+        innerWidth():返回元素的宽度（包括内边距）
+        innerHeight():返回元素的高度（包括内边距）
+        outerWidth():返回元素的宽度（包括内边距和边框）
+        outerHeight():返回元素的高度（包括内边距和边框）
+        outerWidth(true) 返回元素的宽度（包括内边距、边框和外边距）
+        outerHeight(true) 返回元素的高度（包括内边距、边框和外边距）
+    </pre>
+</body>
+</html>

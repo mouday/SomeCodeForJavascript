@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        for (var i = 0; i < 5; i++) {
+            document.write(i, "这是一段话<br>");
+        }
+        cars = ["丰田", "捷达", "吉普", "卡车"];
+        document.write("<h3>使用for in循环输出</h3><br>");
+        for (car in cars) {
+            document.write(cars[car] + "<br>");
+        }
+
+        document.write("<h3>使用for循环输出</h3><br>");
+        var i = 0;
+        for (; cars[i];) {
+            document.write(cars[i] + "<br>");
+            i++
+        }
+        document.write("<h3>使用while循环输出</h3><br>")
+        var i = 0;
+        while (cars[i]) {
+            document.write(cars[i] + "<br>");
+            i++
+        }
+        document.write("<h3>使用break跳出循环(0-9)</h3><br>")
+        for (var i = 0; i < 10; i++) {
+            if (i == 3) break;
+            document.write("第" + i + "<br>");
+        }
+        document.write("<h3>使用continue中断循环(3)</h3><br>")
+        for (var i = 0; i < 10; i++) {
+            if (i == 3) continue;
+            document.write("第" + i + "<br>");
+        }
+        document.write("<h3>break可跳出任何代码块</h3><br>")
+        cars = ["BMW", "Volvo", "Saab", "Ford"];
+        list://标签
+        {
+            document.write(cars[0] + "<br>");
+            document.write(cars[1] + "<br>");
+            document.write(cars[2] + "<br>");
+            break list;
+            document.write(cars[3] + "<br>");
+            document.write(cars[4] + "<br>");
+            document.write(cars[5] + "<br>");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

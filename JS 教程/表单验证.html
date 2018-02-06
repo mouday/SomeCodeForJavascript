@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 表单必填验证
+        function validate_required(field, alertText) {
+            with (field) {
+                if (value == null || value == "") {
+                    alert(alertText);
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        }
+        // e-mail验证
+        function validate_email(field, alertText) {
+            with (field) {
+                apos = value.indexOf("@");
+                alert(apos);
+                dotpos = value.lastIndexOf(".");
+                if (apos < 1 || dotpos - apos < 2) {
+                    alert(alertText);
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        }
+        function validate_from(thisform) {
+            with (thisform) {
+                if (validate_required(email1, "email must be filled out") == false) {
+                    email1.focus();
+                    return false;
+                }
+            }
+        }
+        function validate_email(thisform) {
+            with (thisform) {
+                if (validate_email(email2, "Not a valid e-mail address!") == false) {
+                    email2.focus();
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h3>表单必填验证</h3>
+    <form action="submitpage.htm" onsubmit="return validate_from(this)" method="post">
+        Email:
+        <input type="text" name="email1" size="30">
+        <input type="submit" value="submit">
+    </form>
+    <h3>表单邮箱验证</h3>
+    <form action="submitpage.htm" onsubmit="return validate_email(this)" method="post">
+        Email:
+        <input type="text" name="email2" size="30">
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>

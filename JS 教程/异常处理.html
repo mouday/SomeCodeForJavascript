@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function myfunciton() {
+            try {
+                var x=document.getElementById("demo").value;
+                if(x=="") throw "空值";
+                if(isNaN(x)) throw "不是数字";
+                if(x>10) throw "数字太大了";
+                if(x<5) throw "数字太小了";
+                
+            }
+            catch (err) {
+                var y=document.getElementById("mess");
+                y.innerHTML="error:"+err;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h3>异常处理</h3>
+    <p>请输入一个数：5-10</p>
+    <input type="text" id="demo">
+    <button type="button" onclick="myfunciton()">提交</button>
+    <p id="mess"></p>
+</body>
+
+</html>

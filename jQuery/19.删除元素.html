@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $("document").ready(function(){
+            $("#btn-remove").click(function(){
+                $("div").remove();  //删除被选元素（及其子元素）
+            });
+        });
+        $("document").ready(function(){
+            $("#btn-empty").click(function(){
+                $("div").empty();  //删除子元素
+            });
+        });
+        $("document").ready(function(){
+            $("#btn-filter").click(function(){
+                $("p").remove(".p");  //过滤被删除的元素
+            });
+        });
+    </script>
+</head>
+<body>
+   
+    <div style="width:500px; height:200px; background-color:green">
+        <p class="p">this is a p label class is p</p>
+        <p>this is a p label</p>
+        <p class="p">this is a p label class is p</p>
+        <p>this is a p label</p>
+    </div>
+
+    <button id="btn-filter">remove过滤</button>
+    <button id="btn-empty">empty</button>
+    <button id="btn-remove">remove</button>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $("docment").ready(function(){
+            $("#btn-slideDown").click(function(){
+                $(".div1").slideDown();
+                $(".div2").slideDown("slow");
+                $(".div3").slideDown(2000);
+
+            });
+            $("#btn-slideUp").click(function(){
+                $(".div1").slideUp();
+                $(".div2").slideUp("slow");
+                $(".div3").slideUp(2000);
+
+            });
+            $("#btn-slideToggle").click(function(){
+                $(".div1").slideToggle();
+                $(".div2").slideToggle("slow");
+                $(".div3").slideToggle(2000);
+            });
+  
+        });
+    </script>
+   <style type="text/css">
+       div{
+        width:80px;
+        height:80px;
+        display: none;
+        margin-bottom: 10px;
+       }
+       div.div1{
+        background-color:red; 
+       }
+       div.div2{
+        background-color:green;
+       }
+       div.div3{
+        background-color:blue;
+       }
+   </style>
+</head>
+<body>
+    <h2>滑动方法可使元素上下滑动</h2>
+
+   <button type="button" id="btn-slideDown">slideDown</button>
+   <button type="button" id="btn-slideUp">slideUp</button>
+   <button type="button" id="btn-slideToggle">slideToggle</button>
+   <br><br>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+</body>
+</html>

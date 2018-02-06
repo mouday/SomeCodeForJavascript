@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+       $("docment").ready(function(){
+        $("#btn-click").click(function(){
+            $("p").text("btn-click");
+        });
+       });
+
+       $("docment").ready(function(){
+        $("#btn-dblclick").dblclick(function(){
+            $("p").text("btn-dblclick");
+        });
+       });
+
+       $("docment").ready(function(){
+        $("input").focus(function(){
+            $(this).val("focus");
+        });
+        $("#mouse_test").mouseover(function(){
+            $(this).text("mouseover");
+        });
+        $("#mouse_test").mouseleave(function(){
+            $(this).text("mouseleave")
+        })
+       });
+    </script>
+</head>
+<body>
+   <h2><p>no event</p></h2>
+   <button id="btn-click" type="button">btn-click</button><br><br>
+   <button id="btn-dblclick" type="button">btn-dblclick</button><br><br>
+   <input type="text" name="" ><br>
+   <h2 id="mouse_test">no mouse</h2>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        //文档就绪函数,防止文档在完全加载（就绪）之前运行 jQuery 代码
+        //$(selector).action()
+        $(document).ready(function(){
+            $("p").click(function(){
+                $(this).hide();
+            });
+        });
+    </script>
+</head>
+<body>
+   <p>if  you click me ,i will disappear</p> 
+</body>
+</html>

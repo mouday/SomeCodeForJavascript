@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    var pattern=new RegExp("e");
+    // test() 方法检索字符串中的指定值,返回值是 true 或 false。
+    document.write("<p>"+pattern.test("The best things in life are free")+"</p>");
+
+    // exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。
+    document.write("<p>"+pattern.exec("The best things in life are free")+"</p>");
+    
+    // 找到所有某个字符的所有存在
+    var pattern1=new RegExp("e","g");
+    do{
+        result=pattern1.exec("The best things in life are free");
+        document.write(result);
+    }while(result!=null);
+
+    // compile() 方法用于改变 RegExp。
+    pattern.compile("d");
+    document.write("<p>"+pattern.test("The best things in life are free")+"</p>");
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

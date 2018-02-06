@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // Date() 方法获得当日的日期
+        document.write("直接输出时间：" + Date() + "<br>");
+
+        // getTime() 返回从 1970 年 1 月 1 日至今的毫秒数
+        var d = new Date();
+        document.write("从 1970/01/01 至今已过去 " + d.getTime() + " 毫秒<br>");
+
+        var myDate = new Date();
+        document.write(myDate + "<br>");
+
+        // toUTCString() 将当日的日期（根据 UTC）转换为字符串
+        document.write("toUTCString()  " + myDate.toUTCString() + "<br>")
+
+        // getDay() 和数组来显示星期
+        var weekday = new Array();
+        weekday[0] = "星期日";
+        weekday[1] = "星期一";
+        weekday[2] = "星期二";
+        weekday[3] = "星期三";
+        weekday[4] = "星期四";
+        weekday[5] = "星期五";
+        weekday[6] = "星期六";
+        document.write("getDay()：" + myDate.getDay() + "<br>");
+        document.write("显示星期：" + weekday[myDate.getDay()] + "<br>");
+        // 注意：表示月份的参数介于 0 到 11 之间。
+        // 也就是说，如果希望把月设置为 8 月，则参数应该是 7。
+        myDate.setFullYear(2008, 7, 9);//setFullYear() 设置具体的日期
+        document.write(myDate + "<br>");
+        myDate.setDate(myDate.getDate() + 30);
+        document.write(myDate + "<br>");
+        // 比较日期大小
+        var nowDate = new Date();
+        var x = document.getElementById("demo");
+        document.write("myDate " + myDate + "<br>");
+        document.write("nowDate " + nowDate + "<br>");
+
+        if (nowDate > myDate) {
+            x.innerHTML = "nowDate+'>'+myDate";
+        }
+        else {
+            x.innerHTML = "nowDate+'<'+myDate";
+        }
+
+        // 显示一个钟表
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById("txt").innerHTML = h + ":" + m + ":" + s;
+            t = setTimeout("startTime()", 500);
+        }
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i }
+            return i
+        }
+    </script>
+</head>
+
+<body onload="startTime()">
+    <p id="demo"></p>
+    <p id="txt"></p>
+</body>
+
+</html>

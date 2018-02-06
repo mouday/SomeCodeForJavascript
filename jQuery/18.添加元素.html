@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $("docment").ready(function(){
+            // 元素的结尾插入内容
+            $("#append_p").click(function(){
+                $("p").append("<b>good</b>")
+            });
+            // 元素的开头插入内容
+            $("#prepend_p").click(function(){
+                $("p").prepend("<b>good</b>")
+            })
+            $("#append_list").click(function(){
+                $("ol").append("<li>new item</li>")
+            })
+            $("#prepend_list").click(function(){
+                $("ol").prepend("<li>new item</li>")
+            })
+            $("#append_multi").click(function(){
+                var txt1="<p>text1</p>";    // 以 HTML 创建新元素
+                var txt2=$("<p></p>").text("text2");    // 以 jQuery 创建新元素
+                var txt3=document.createElement("p");   // 通过 DOM 来创建文本
+                txt3.innerHTML="text3";
+                $("#p_multi").append(txt1,txt2,txt3);   // 追加多个新元素
+            });
+            $("#after").click(function(){
+                $("#p_multi").after("<p>after</p>")
+            });
+            $("#before").click(function(){
+                $("#p_multi").before("<p>before</p>")
+            });
+        })
+    </script>
+</head>
+<body>
+   <p>this is a p</p>
+    <ol>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ol>
+    <p id="p_multi"></p>
+    <button id="append_p">append(文本)</button>
+    <button id="append_list">append(列表项)</button>
+    <button id="prepend_p">prepend(文本)</button>
+    <button id="prepend_list">prepend(列表项)</button>
+    <button id="append_multi">append(多文本)</button>
+    <button id="after">after(文本)</button>
+    <button id="before">before(文本)</button>
+
+</body>
+</html>

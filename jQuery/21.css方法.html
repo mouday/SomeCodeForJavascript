@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+           $("document").ready(function(){
+                $("#btn-getcss").click(function(){
+                    //返回 CSS 属性
+                    alert("background-color: "+$("p").css("background-color"));
+                });
+                $("#btn-setcss").click(function(){
+                    //设置 CSS 属性
+                    $("p").css("background-color","yellow");
+                });
+                $("#btn-setmulticss").click(function(){
+                    //设置多个 CSS 属性
+                    $("p").css({"background-color": "yellow", "font-size":"200%"});
+                });
+           });
+    </script>
+</head>
+<body>
+    <p style="background-color: green">this is a p label</p>
+    <button id="btn-getcss">getcss</button>
+    <button id="btn-setcss">setcss</button>
+    <button id="btn-setmulticss">setmulticss</button>
+</body>
+</html>

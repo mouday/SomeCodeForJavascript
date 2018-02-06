@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+       $("document").ready(function(){
+        // 点击隐藏
+        $(".d .btn-hide").click(function(){
+            $(this).parents(".d").children("p").hide("slow");
+        });
+        // 点击显示
+        $(".d .btn-show").click(function(){
+            $(this).parents(".d").children("p").show(500);
+            // 语法：$(selector).hide(speed,callback);
+            // 可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
+            // 可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
+        });
+       });
+    </script>
+    <style type="text/css">
+        div.d{
+            background: #e5eecc;
+            padding: 7px;
+            border: solid 1px #3e3e3e;
+            width: 500px;
+        }
+   </style>
+</head>
+<body>
+    <h2>this is a title</h2>
+   <div class="d">
+    <button class="btn-hide">hide</button>
+    <button class="btn-show">show</button>
+    <p>
+        this is a p label   
+   </p>
+</div>
+
+   <h2>this is a title</h2>
+   <div class="d">
+    <button class="btn-hide">hide</button>
+    <button class="btn-show">show</button>
+    <p>
+        this is a p label   
+   </p></div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    // 未来的某时执行代码
+    function mySetTimeout(){
+        var x=setTimeout("alert('2s延迟警告框')",2000);
+    }
+    // 无穷循环
+    var c=0;
+    var t;
+    function timedCount(){
+        document.getElementById("txt").innerHTML=c;
+        c++;
+        t=setTimeout("timedCount()",1000);
+    }
+    // 取消setTimeout()
+    function stopCount(){
+        clearTimeout(t);
+    }
+    function timedText(){
+        var t1=setTimeout("document.getElementById('inputText').value='2s'",2000);
+        var t1=setTimeout("document.getElementById('inputText').value='4s'",4000);
+        var t1=setTimeout("document.getElementById('inputText').value='6s'",6000);
+    }
+    // 一个 JavaScript 小时钟
+    function startTime(){
+        var date=new Date();
+        var h=date.getHours();
+        var m=date.getMinutes();
+        var s=date.getSeconds();
+        m=checkTime(m);
+        s=checkTime(s);
+        document.getElementById("clock").innerHTML=h+":"+m+":"+s;
+        var t=setTimeout("startTime()",500);
+    }
+    function checkTime(t){
+        if(t<10){
+            t="0"+t;
+        }
+        return t;
+    }
+    </script>
+</head>
+<body onload="startTime()">
+    <button onclick="mySetTimeout()">延迟变化</button><br>
+    <br>
+    <input type="button" value="start count!" onclick="timedCount()">
+    <p id="txt"></p>
+    <button onclick="stopCount()">stop!</button>
+    <p>点击下面的按钮。输入框会显示出已经逝去的时间（2、4、6 秒）。</p>
+    <input type="text" id="inputText">
+    <input type="button" value="点击计时" onclick="timedText()">
+    <br>
+    小时钟<p id="clock"></p>
+</body>
+</html>

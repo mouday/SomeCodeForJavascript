@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $("docment").ready(function(){
+            $("#title").click(function(){
+                $("#content").slideToggle(5000);
+            });
+            $("#stop").click(function(){
+                $("#content").stop();
+            });
+        });
+    </script>
+    <style type="text/css">
+        #title,#content{
+            padding: 5px;
+            text-align: center;
+            background: #e5eecc;
+            border:solid 1px #c3c3c3;
+        }
+        #content{
+            padding: 50px;
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button id="toggle">show/hide</button> -->
+    <button id="stop">stop</button>
+    <div id="title">title</div>
+    <div id="content">content</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function changeText(id) {
+            id.innerHTML = "改变的新内容";
+        }
+        // onload 和 onunload 事件会在用户进入或离开页面时被触发
+        function checkCookies() {
+            if (navigator.cookieEnabled == true) {
+                alert("cookie已启用");
+            }
+            else {
+                alert("cookie未启用");
+            }
+        }
+    </script>
+</head>
+
+<body onload="checkCookies()">
+    <!-- 通过内嵌脚本改变 -->
+    <p onclick="this.innerHTML='新的内容'">点击这里试试</p>
+    <!-- 通过函数传参改变 -->
+    <p onclick="changeText(this)">通过函数改变</p>
+    <!-- 通过无参函数 -->
+    <button onclick="displayDate()">点击按钮</button>
+    <!-- 通过脚本设置点击事件 -->
+    <button id="mybutton">点击按钮</button>
+
+    <p id="demo"></p>
+    <script>
+        document.getElementById("mybutton").onclick = function () { displayDate() };
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        }
+    </script>
+
+    <h3>文字改变时会触发onchange事件</h3>
+
+    <input type="text" onchange="this.value=this.value.toUpperCase()">
+    <br>
+    <input type="text" id="myInput" onchange="inputChange()">
+    <script>
+        function inputChange() {
+            var x = document.getElementById("myInput");
+            x.value = x.value.toUpperCase();
+        }
+    </script>
+
+    <!-- onmouseover 和 onmouseout 事件 -->
+    <style>
+        div {
+            height: 100px;
+            width: 200px;
+            background: green;
+            color: #FFFFFF;
+            padding: 40px;
+        }
+    </style>
+    <div onmouseover="mover(this)" onmouseout="mout(this)" onmousedown="mdown(this)" onmouseup="mup(this)"> 把鼠标移上去</div>
+    <script>
+    function mover(obj){
+        obj.innerHTML="鼠标放上来了";
+        }
+    function mout(obj){
+        obj.innerHTML="鼠标移出去了";
+    }
+    function mdown(obj){
+        obj.style.backgroundColor="#1ec5e5";
+        obj.innerHTML="鼠标按下了";
+    }
+    function mup(obj){
+        obj.style.backgroundColor="green";
+        obj.innerHTML="鼠标起来了";
+    }
+    </script>
+
+    <img src="imgs\eg_bulboff.gif" onmouseover="bulbOn(this)" onmouseout="bulbOff(this)">
+    <script>
+    function bulbOn(obj){
+        obj.src="imgs/eg_bulbon.gif";
+    }
+    function bulbOff(obj){
+        obj.src="imgs/eg_bulboff.gif";
+    }
+    </script>
+
+    <p>当输入字段获得焦点时，会触发改变背景颜色的函数。</p>
+    <input type="text" onfocus="myFocus(this)">
+    <script>
+        function myFocus(obj){
+            obj.style.background="green";
+        }
+    </script>
+    <h3 onmouseover="style.color='red'"  onmouseout="style.color='green'">把鼠标移动上来试试看</h3>
+</body>
+
+</html>

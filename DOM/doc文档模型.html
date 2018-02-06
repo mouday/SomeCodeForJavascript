@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <p id="demo">hello world</p>
+    <div id="main">
+        <p>第一个p标签的内容</p>
+        <p>第二个p标签的内容</p>
+    </div>
+    <script>
+            // 通过id获取dom元素
+            var x=document.getElementById("demo");
+            document.write("获取的值为："+x.innerHTML+"<br>");
+            // 通过标签名获取dom元素
+            var y=document.getElementById("main");
+            var z=y.getElementsByTagName("p");
+            document.write("获取的第一个p标签的内容为："+z[0].innerHTML+"<br>");
+    </script>
+</body>
+</html>

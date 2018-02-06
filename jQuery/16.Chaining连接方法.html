@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $("document").ready(function(){
+            $("button").click(function(){
+                $("p").css("color","red")
+                    .slideUp(2000)
+                    .slideDown(2000);
+                    // jQuery 会抛掉多余的空格，并按照一行长代码来执行上面的代码行。
+            });
+        });
+    </script>    
+</head>
+<body>
+    <p>this is a p label</p>
+    <button>click me</button>
+</body>
+</html>

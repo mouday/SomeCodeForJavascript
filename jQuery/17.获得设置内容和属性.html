@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $("document").ready(function(){
+            // 设置或返回所选元素的文本内容
+            $("#text").click(function(){
+                alert("text: "+ $("#testp").text())
+            });
+            $("#textSet").click(function(){
+                $("#testp").text("this is new label contents");
+            });
+            // 回调函数
+            $("#textCall").click(function(){
+                $("#testp").text(function(index, text){
+                    return text+"good";
+                });
+            });
+
+            // 设置或返回所选元素的内容（包括 HTML 标记）
+            $("#html").click(function(){
+                alert("text: "+ $("#testp").html())
+            });
+            $("#htmlSet").click(function(){
+               $("#testp").html("this is blod <b>label</b> contents")
+            });
+            // 回调函数
+             $("#htmlCall").click(function(){
+               $("#testp").html(function(index, text){
+                    return text+"<b>good</b>"
+               })
+            });
+            
+            // 设置或返回表单字段的值
+            $("#val").click(function(){
+                alert("val: "+ $("input").val())
+            });
+            $("#valSet").click(function(){
+                $("input").val("new value")
+            });
+            // 回调函数
+            $("#valCall").click(function(){
+                $("input").val(function(index, value){
+                    return value+"good";
+                })
+            });
+
+            // 设置或获取属性值
+            $("#attr").click(function(){
+                alert("attr: "+ $("#link").attr("href"))
+            });
+            $("#attrSet").click(function(){
+               $("#link").attr("href","http://www.qq.com")
+            });
+            // 回调函数
+            $("#attrCall").click(function(){
+               $("#link").attr("href",function(index, value){
+                    return value+"/qqq";
+            })
+            });
+        });
+    </script>
+</head>
+<body>
+   <p id="testp">this is a p label,this is <b>blod</b></p>
+   <p><a href="http://www.baidu.com" id="link">www.baidu.com</a></p>
+   <input type="text"><br><br>
+   <button id="text">获取test</button>
+   <button id="html">获取html</button>
+   <button id="val">获取val</button>
+   <button id="attr">获取attr</button>
+   <br>
+   <br>
+   <button id="textSet">设置test</button>
+   <button id="htmlSet">设置html</button>
+   <button id="valSet">设置val</button>
+   <button id="attrSet">设置attr</button>
+   <br>
+   <br>
+   <button id="textCall">回调test</button>
+   <button id="htmlCall">回调html</button>
+   <button id="valCall">回调val</button>
+   <button id="attrCall">回调attr</button>
+</body>
+</html>

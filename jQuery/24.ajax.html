@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btn-load").click(function(){
+                $("p").load("source/宿山寺.txt");
+            });
+            $("#btn-call").click(function(){
+                $("p").load("source/宿山寺.txt", function(responseTxt,statusTxt,xhr){
+                    if(statusTxt=="success")
+                        alert("外部内容加载成功！");
+                    if(statusTxt=="error")
+                        alert("Error: "+xhr.status+": "+xhr.statusText);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>这是原来的内容</p>
+    <button id="btn-load">显示</button>
+    <button id="btn-call">显示并回调</button>
+    <pre style="font-size:16px">
+        AJAX 是与服务器交换数据的艺术，它在不重载全部页面的情况下，实现了对部分网页的更新。
+        AJAX = 异步 JavaScript 和 XML（Asynchronous JavaScript and XML）。
+        
+        【语法】
+        $(selector).load(URL,data,callback);
+
+        必需的 URL 参数规定您希望加载的 URL。
+        可选的 data 参数规定与请求一同发送的查询字符串键/值对集合。
+        可选的 callback 参数是 load() 方法完成后所执行的函数名称。
+        
+        callback 参数:
+        responseTxt - 包含调用成功时的结果内容
+        statusTXT - 包含调用的状态
+        xhr - 包含 XMLHttpRequest 对象
+
+    </pre>
+</body>
+</html>

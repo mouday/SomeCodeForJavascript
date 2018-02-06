@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .blue{
+            color:blue;
+            
+        }
+        .important{
+            font-weight: bold;
+            font-size:xx-large;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $("document").ready(function(){
+            $("#btn-addClass").click(function(){
+                $("p").addClass("blue");
+            });
+        });
+        $("document").ready(function(){
+            $("#btn-addClass2").click(function(){
+                $("h1,p").addClass("blue important");
+            });
+       
+            $("#btn-removeClass").click(function(){
+                $("h1,p").removeClass("blue important");
+            });
+
+            $("#btn-toggleClass").click(function(){
+                $("h1,p").toggleClass("blue important");
+            });
+         })
+    </script>
+</head>
+<body>
+   <h1>this is a h1 label</h1>
+   <p>this is a p label</p>
+   <p>this is a p label</p>
+   <p>this is a p label</p>
+   <p>this is a p label</p>
+   <p>this is a p label</p>
+   <button id="btn-addClass">addClass</button>
+   <button id="btn-addClass2">addClass2</button>
+   <button id="btn-removeClass">removeClass</button>
+   <button id="btn-toggleClass">toggleClass</button>
+</body>
+</html>

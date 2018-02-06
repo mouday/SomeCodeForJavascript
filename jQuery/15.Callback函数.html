@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        // Callback 函数在当前动画 100% 完成之后执行。
+        $("document").ready(function(){
+            // no callback
+            $("#btn1").click(function(){
+                $("p").hide(5000);
+                alert("this is a alert!")
+            });
+            
+            // have callback
+            $("#btn2").click(function(){
+                $("p").hide(5000,function(){
+                    alert("this is a alert!");
+                });
+                
+            })
+        })   
+    </script>
+</head>
+<body>
+    <button id="btn1">no callback</button>
+    <button id="btn2">have callback</button>
+    <p>this is a p label</p>
+    <p>this is a p label</p>
+</body>
+</html>

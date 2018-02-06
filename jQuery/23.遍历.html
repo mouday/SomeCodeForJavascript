@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".div2").addClass("red")  //初始化
+
+            $("#btn-children").click(function(){
+                var cur=$(".red");
+                cur.removeClass("red");
+                cur.children().addClass("red"); //设置子元素
+            });
+
+            $("#btn-parent").click(function(){
+                var cur=$(".red");
+                cur.removeClass("red");
+                cur.parent().addClass("red");  //设置父元素
+            });
+
+            $("#btn-next").click(function(){
+                var cur=$(".red");
+                cur.removeClass("red");
+                cur.next().addClass("red");  //设置同级下一元素
+            });
+
+            $("#btn-prev").click(function(){
+                var cur=$(".red");
+                cur.removeClass("red");
+                cur.prev().addClass("red");  //设置同级上一元素
+            });
+
+            $("#btn-first").click(function(){
+                var cur=$(".red");
+                cur.removeClass("red");
+                cur.first().addClass("red");  
+            });
+
+            $("#btn-last").click(function(){
+                var cur=$(".red");
+                cur.removeClass("red");
+                cur.last().addClass("red");  
+            });
+
+            $("#btn-eq").click(function(){
+                var cur=$(".red");
+                cur.removeClass("red");
+                cur.eq(1).addClass("red");  
+            });
+
+            $("#btn-filter").click(function(){
+                var cur=$(".red");
+                cur.removeClass("red");
+                cur.filter(".test").addClass("red");  
+            });
+        });
+    </script>
+    <style type="text/css">
+        .red{
+            border: solid 2px red;
+        }
+        p{
+            line-height: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+   <div class="div1">
+        <div class="div2">
+            <p class="test1">items</p>
+            <p class="test">items</p>
+            <p class="test">items</p>
+        </div>
+        <div class ="div3">
+            <p class="test4">items</p>
+            <p class="test">items</p>
+            <p class="test">items</p>
+        </div>
+        
+   </div>
+   <button id="btn-children">btn-children</button>
+   <button id="btn-parent">btn-parent</button>
+   <button id="btn-next">btn-next</button>
+   <button id="btn-prev">btn-prev</button>
+   <button id="btn-first">btn-first</button>
+   <button id="btn-last">btn-last</button>
+   <button id="btn-eq">btn-eq=1</button>
+   <button id="btn-filter">btn-filter</button>
+
+   <pre style="font-size:16px">
+        【祖先】向上遍历 DOM 树:
+        parent()  返回被选元素的直接父元素
+        parents()  返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (html),可选参数来过滤
+        parentsUntil()  返回介于两个给定元素之间的所有祖先元素
+        
+        【后代】向下遍历 DOM 树：
+        children()  返回被选元素的所有直接子元素，可选参数来过滤
+        find()  返回被选元素的后代元素，一路向下直到最后一个后代，可选参数来过滤，所有："*"
+        
+        【同胞】在 DOM 树中水平遍历：
+        siblings()  返回被选元素的所有同胞元素，可选参数来过滤
+        next()  返回被选元素的下一个同胞元素
+        nextAll()  返回被选元素的所有跟随的同胞元素
+        nextUntil()  返回介于两个给定参数之间的所有跟随的同胞元素
+        prev()  同上，相反
+        prevAll()  同上，相反
+        prevUntil()  同上，相反
+
+        【过滤】
+        first()  返回被选元素的首个元素
+        last()  返回被选元素的最后一个元素
+        eq()  返回被选元素中带有指定索引号的元素，索引号从 0 开始
+        filter()  允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回
+        not()  返回不匹配标准的所有元素
+   </pre>
+</body>
+</html>
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    var myArray=new Array();
+    myArray[0]="one";
+    myArray[1]="two";
+    myArray[2]="three";
+    myArray[3]="four";
+    myArray[4]="five";
+    //for循环
+    document.write("<h3>for...</h3>");
+    
+    for(i=0;i<myArray.length;i++)
+    {
+        document.write(myArray[i]+"<br>");
+    }
+    //for。。。in循环
+    document.write("<h3>for...in</h3>");
+    
+    var x;
+    for(x in myArray){
+        document.write(myArray[x]+"<br>");
+    }
+
+    // concat() 方法来合并两个数组
+    document.write("<h3>concat()</h3>");
+    
+    var arr=new Array("six","seven","eight","nine");
+    document.write(myArray.concat(arr));
+    document.write("<br>");
+
+    // join() 方法将数组的所有元素组成一个字符串
+    document.write("<h3>join()</h3>");
+    
+    document.write(myArray.join());
+    document.write("<br>");
+    document.write(myArray.join("."));
+    // sort() 方法从字面上对数组进行排序
+    document.write("<h3>文字数组sort() </h3>");
+    document.write("myArray: "+myArray+"<br>");
+    document.write("sort(): "+myArray.sort()+"<br>");
+
+    // sort() 方法从数值上对数组进行排序
+    var nums=new Array(20,24,10,9,4,16,15,4,1);
+    function sortNumber(a,b){
+        return a-b;
+    }
+    document.write("<h3>数字数组sort() </h3>");
+    document.write("nums: "+nums+"<br>");
+    document.write("sort(): "+nums.sort(sortNumber)+"<br>");
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

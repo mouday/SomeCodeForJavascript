@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 如果逻辑对象无初始值或者其值为 0、-0、null、""、false、undefined 或者 NaN，那么对象的值为 false。
+        否则，其值为 true（即使当自变量为字符串 "false" 时）！ -->
+        <script>
+        document.write("<h3>false</h3>");
+        var myboolean=new Boolean();
+        document.write("无初始值: "+myboolean+"<br>");
+        var myboolean=new Boolean(0);
+        document.write("初始值0: "+myboolean+"<br>");
+
+        var myboolean=new Boolean(-0);
+        document.write("初始值-0: "+myboolean+"<br>");
+        
+        var myboolean=new Boolean(null);
+        document.write("初始值null: "+myboolean+"<br>");
+        
+        var myboolean=new Boolean("");
+        document.write("初始值'': "+myboolean+"<br>");
+
+        var myboolean=new Boolean(false);
+        document.write("初始值false: "+myboolean+"<br>");
+        
+        var myboolean=new Boolean(undefined);
+        document.write("初始值undefined: "+myboolean+"<br>");
+
+        var myboolean=new Boolean(NaN);
+        document.write("初始值NaN: "+myboolean+"<br>");
+        
+        document.write("<h3>true</h3>");
+        var myboolean=new Boolean(1);
+        document.write("初始值1: "+myboolean+"<br>");
+        var myboolean=new Boolean(true);
+        document.write("初始值true: "+myboolean+"<br>");
+        var myboolean=new Boolean("true");
+        document.write("初始值'true': "+myboolean+"<br>");
+        var myboolean=new Boolean("false");
+        document.write("初始值false: "+myboolean+"<br>");
+        var myboolean=new Boolean("Bill");
+        document.write("初始值Bill: "+myboolean+"<br>");
+
+        
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

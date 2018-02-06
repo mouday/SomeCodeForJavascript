@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        var jq = $.noConflict()//$ = jQuery  解决名称冲突，重命名
+        jq("document").ready(function(){
+            jq("button").click(function(){
+                jq("p").hide();
+            });
+        });
+    </script>
+   
+</head>
+<body>
+   <p>this is  a p label</p>
+   <button type="button">click me</button>
+</body>
+</html>

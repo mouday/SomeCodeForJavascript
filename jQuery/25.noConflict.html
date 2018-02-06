@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        var js = $.noConflict();  //返回对 jQuery 的引用
+
+        jQuery(document).ready(function(){
+            jQuery("#btn-1").click(function(){
+                jQuery("p").text("释放$")
+            })
+        })
+
+        js(document).ready(function(){
+            js("#btn-2").click(function(){
+                js("p").text("自定义$")
+            })
+        })
+
+        jQuery(document).ready(function($){
+            $("#btn-3").click(function(){
+                $("p").text("内部使用$")
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <p>这里显示结果</p>
+    <button id="btn-1">释放$</button>
+    <button id="btn-2">自定义$</button>
+    <button id="btn-3">内部使用$</button>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>操作 HTML 元素</title>
+</head>
+<body>
+<p id="myp">这是一个段落</p>
+<button  onclick="myfunction()">点击下试试</button>
+<div id="one"></div>
+<div id="two"></div>
+<button onclick="changeText()">点击测试代码块</button>
+<script>
+    // 替换内容
+    document.getElementById("myp").innerHTML="这是替换的段落";
+    // 输出内容
+    document.write("<p>这是write输出的内容</p>");
+    //覆盖整个文档,拆行显示
+    function myfunction(){
+        document.write("这是句话覆盖 \
+            了之前的内容");
+    }
+    //代码块
+    function changeText(){
+        document.getElementById("one").innerHTML="这句话是第一句";
+        document.getElementById("two").innerHTML="这句话是第二句";
+    }
+</script>
+
+</body>
+</html>

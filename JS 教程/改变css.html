@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   <script>
+   function changeColor(){
+       document.getElementById("demo").style.color="blue";
+   }
+   </script>
+</head>
+<body>
+    <!-- 方式一：通过函数 -->
+    <p id="demo">点击按钮试试改变这这段文字的颜色</p>
+    <button onclick="changeColor()">点击改变颜色</button>
+    <!-- 方式二：直接嵌入 -->
+    <p id="id1">点击按钮试试改变这这段文字的颜色</p>
+    <button onclick="document.getElementById('id1').style.color='red'">点击改变颜色</button>
+    
+    <p id="id2">这段文字会隐藏</p>
+    <button onclick="document.getElementById('id2').style.visibility='hidden'">隐藏文字</button>
+    <button onclick="document.getElementById('id2').style.visibility='visible'">显示文字</button>
+</body>
+</html>
